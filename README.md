@@ -7,6 +7,8 @@ A complete beginner-friendly template to run a containerized `.NET Web API` and 
 - Set up a local dev environment with containerized services
 - Explore how APIs communicate with databases in a real-world dev setup
 
+💡 If you run into any issues, please refer to the YouTube tutorial — it walks through everything step-by-step and may cover details not mentioned in this README.
+
 📺 **Watch the full tutorial on YouTube:**  
 [▶️ Getting Started with Docker Compose: .NET API + SQL Server](https://youtu.be/ocMwNAt3-G0)
 
@@ -132,7 +134,6 @@ This project is ideal for:
 - Practicing database + API integration
 - Assignments or classroom demos
 
-Want to contribute improvements? Check out [`CONTRIBUTING.md`](CONTRIBUTING.md) *(optional)*
 
 ---
 
@@ -153,7 +154,7 @@ Want to contribute improvements? Check out [`CONTRIBUTING.md`](CONTRIBUTING.md) 
 
 ## 🧑‍💻 About the Author
 
-👋 I'm Robin Kamo — YH Instructor, developer, and cloud educator.  
+👋 I'm Robin Kamo — Senior DevOps Engineer, YH Instructor, developer, and cloud educator.  
 This repo is part of my effort to support students and early-career developers in learning practical, modern cloud development skills.
 
 Follow along for more at [linkedin.com/in/robin-kamo](https://www.linkedin.com/in/robin-kamo)
