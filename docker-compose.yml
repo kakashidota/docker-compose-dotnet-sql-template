@@ -1,0 +1,33 @@
+version: '3.4'
+
+services:
+  dockercomposepotatodemo:
+    image: kakashidota/azurecomposedemo:latest
+    ports:
+     - "8080:8080"
+     - "8081:8081"
+    depends_on:
+     - sqlserver
+    environment:
+     - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+     - productnetwork
+    restart: on-failure
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: "Password12345!"
+      ACCEPT_EULA: "Y"
+    ports:
+     - "1433:1433"
+    volumes:
+     - sqlvolume:/var/opt/mssql
+    networks:
+     - productnetwork
+
+networks:
+  productnetwork:
+
+volumes:
+  sqlvolume:

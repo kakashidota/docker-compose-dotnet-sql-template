@@ -1,0 +1,6 @@
+@DockerComposePotatoDemo_HostAddress = http://localhost:5117
+
+GET {{DockerComposePotatoDemo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
