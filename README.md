@@ -57,10 +57,39 @@ This will:
 ### 3. Test the API
 
 Visit:  
-`http://localhost:5000/weatherforecast`
+`http://localhost:5000/products`
 
-> You'll get a default response from the API.  
+> This will return a prepopulated list of products from the SQL Server database.
+
+The database is automatically migrated and seeded on startup using the following logic:
+
+```csharp
+using (var scope = app.Services.CreateScope()) 
+{ 
+    var context = scope.ServiceProvider.GetRequiredService<ProductContext>();
+    context.Database.Migrate();
+
+    if (!context.Products.Any())
+    {
+        context.Products.AddRange(
+            new Product { Name = "Coca-Cola", Price = 10 },
+            new Product { Name = "Fanta", Price = 10 },
+            new Product { Name = "Bebsi", Price = 5 }
+        );
+
+        context.SaveChanges();
+    }
+}
+```
+
+The API route is defined as:
+
+```csharp
+app.MapGet("/products", async (ProductContext db) => await db.Products.ToListAsync());
+```
+
 Database connection is configured in `appsettings.Development.json`.
+
 
 ---
 
